@@ -68,3 +68,5 @@ data/processed/
 # Temporary files
 tmp/
 temp/
+
+.kaggle/
