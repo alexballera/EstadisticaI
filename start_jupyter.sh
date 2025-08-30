@@ -24,8 +24,7 @@ echo ""
 jupyter notebook \
     --ip=0.0.0.0 \
     --port=8888 \
-    --no-browser=False \
     --allow-root \
-    --NotebookApp.token='' \
-    --NotebookApp.password='' \
-    --notebook-dir="$(pwd)"
+    --ServerApp.token='' \
+    --ServerApp.password='' \
+    --ServerApp.root_dir="$(pwd)"
