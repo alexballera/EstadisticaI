@@ -30,7 +30,7 @@ El proyecto incluye un kernel específico llamado **"Estadística I"** que puede
 
 ## 🌐 Acceso desde el Navegador
 
-- **URL Local**: http://localhost:8888
+- **URL Local**: <http://localhost:8888>
 - **Sin Token**: Los scripts están configurados para desarrollo local sin autenticación
 - **Auto-abrir**: El navegador se abrirá automáticamente
 
@@ -56,21 +56,21 @@ Cuando inicies Jupyter, verás la estructura completa del proyecto:
 
 ## 🛠️ Resolución de Problemas
 
-### Si no funciona el kernel "Estadística I":
+### Si no funciona el kernel "Estadística I"
 
 ```bash
 source .venv/bin/activate
 python -m ipykernel install --user --name=estadistica_env --display-name="Estadística I"
 ```
 
-### Si hay problemas con librerías:
+### Si hay problemas con librerías
 
 ```bash
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### Si Jupyter no se instala:
+### Si Jupyter no se instala
 
 ```bash
 source .venv/bin/activate
