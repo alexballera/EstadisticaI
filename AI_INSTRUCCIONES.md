@@ -19,11 +19,34 @@ Este repositorio contiene Jupyter Notebooks y materiales de apoyo para la materi
 - **Sin importaciones entre notebooks**: Cada notebook es independiente; no asumas módulos o scripts compartidos.
 - **PDFs**: Algunas carpetas incluyen PDFs con teoría o instrucciones.
 
+## Herramientas de cálculo
+
+Este proyecto utiliza **dos herramientas principales** para cálculos y verificación:
+
+### **Python**
+
+- **Uso principal**: Notebooks interactivos con código, ejemplos y ejercicios
+- **Librerías típicas**: NumPy, SciPy, Matplotlib, pandas para análisis estadístico
+- **Teoría de conjuntos**: Se usa la estructura nativa `set` de Python para operaciones con conjuntos
+- **Ubicación**: Todo el código ejecutable está en los archivos `.ipynb`
+
+### **HP Prime**
+
+- **Uso complementario**: Verificación de cálculos de probabilidades, estadísticas y teoría de conjuntos
+- **Entorno**: Calculadora gráfica HP Prime (física o emulador) en modo CAS
+- **Operaciones**: Cálculos exactos, verificación de resultados, trabajo con conjuntos
+- **Documentación**: Carpeta `hp-prime/` contiene manuales y guías específicas
+- **Guías disponibles**: `guides/` incluye guías rápidas para conjuntos en HP Prime
+
+Al desarrollar contenido, considera ambas herramientas y proporciona ejemplos o verificaciones cuando sea relevante.
+
 ## Guía para agentes de IA
 
 - Al agregar contenido nuevo, respeta la estructura y nomenclatura existente.
 - Prefiere el español para nuevas explicaciones, comentarios y nombres de variables.
 - Si agregas código a un notebook, asegúrate de que sea autoexplicativo e incluye contexto en markdown.
+- **Considera ambas herramientas**: Al desarrollar ejercicios o ejemplos, proporciona soluciones tanto en Python como referencias para HP Prime cuando sea apropiado.
+- **Teoría de conjuntos**: Utiliza las guías específicas disponibles en `guides/` para operaciones con conjuntos.
 - No agregues scripts de build, CI/CD o automatización de tests salvo que se solicite explícitamente.
 - Usa los notebooks existentes como referencia de estilo y estructura.
 
@@ -31,6 +54,8 @@ Este repositorio contiene Jupyter Notebooks y materiales de apoyo para la materi
 
 - `0 Elementos iniciales/`: Materiales y guías introductorias.
 - `1 Probabilidad/` a `9 Numeros Indice/`: Unidades temáticas con notebooks.
+- `hp-prime/`: Documentación, manuales y guías para calculadora HP Prime.
+- `guides/`: Guías rápidas de referencia (Python sets, HP Prime conjuntos, etc.).
 - `README.md`: Descripción breve del proyecto y contexto.
 
 ---
