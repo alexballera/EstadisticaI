@@ -28,6 +28,8 @@ El proyecto incluye un kernel específico llamado **"Estadística I"** que puede
 2. Ve a: `Kernel > Change Kernel > Estadística I`
 3. Alternativamente, al crear un nuevo notebook, selecciona "Estadística I" desde el menú
 
+**⚠️ Importante:** El kernel aparece como "Estadística I" en la interfaz de Jupyter, aunque internamente se llama `estadistica_env`.
+
 ## 🌐 Acceso desde el Navegador
 
 - **URL Local**: <http://localhost:8888>
@@ -56,6 +58,37 @@ Cuando inicies Jupyter, verás la estructura completa del proyecto:
 
 ## 🛠️ Resolución de Problemas
 
+### Problema: "This environment is externally managed"
+
+Si ves este error al ejecutar `pip install -r requirements.txt`, es porque no tienes el entorno virtual activado:
+
+```bash
+# SIEMPRE activa el entorno virtual primero:
+source .venv/bin/activate
+
+# Luego instala las dependencias:
+pip install -r requirements.txt
+```
+
+### Si no existe el entorno virtual
+
+```bash
+# Crear el entorno virtual desde cero:
+python3 -m venv .venv
+
+# Activar el entorno:
+source .venv/bin/activate
+
+# Actualizar pip:
+pip install --upgrade pip
+
+# Instalar dependencias:
+pip install -r requirements.txt
+
+# Configurar kernel de Jupyter:
+python -m ipykernel install --user --name=estadistica_env --display-name="Estadística I"
+```
+
 ### Si no funciona el kernel "Estadística I"
 
 ```bash
@@ -63,16 +96,10 @@ source .venv/bin/activate
 python -m ipykernel install --user --name=estadistica_env --display-name="Estadística I"
 ```
 
-### Si hay problemas con librerías
+### Verificar que todo esté configurado
 
 ```bash
 source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-### Si Jupyter no se instala
-
-```bash
-source .venv/bin/activate
-pip install jupyter notebook
+jupyter kernelspec list
+# Deberías ver "estadistica_env" en la lista
 ```
