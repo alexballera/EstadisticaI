@@ -70,7 +70,38 @@ P(D) = 0.25×0.50 + 0.20×0.30 + 0.10×0.20 = 0.125 + 0.06 + 0.02 = 0.205
 **Paso 2: Aplicar Bayes**
 P(A₁|D) = [P(D|A₁) × P(A₁)] / P(D) = [0.25 × 0.50] / 0.205 = 0.125 / 0.205 ≈ 0.610
 
+### Visualización con 10,000 Televisores:
+
+**📊 Distribución por Marca:**
+- **Marca 1**: 10,000 × 0.50 = **5,000 televisores**
+- **Marca 2**: 10,000 × 0.30 = **3,000 televisores**
+- **Marca 3**: 10,000 × 0.20 = **2,000 televisores**
+
+**🔧 Televisores Defectuosos:**
+- **Marca 1 defectuosos**: 5,000 × 0.25 = **1,250 televisores**
+- **Marca 2 defectuosos**: 3,000 × 0.20 = **600 televisores**
+- **Marca 3 defectuosos**: 2,000 × 0.10 = **200 televisores**
+- **Total defectuosos**: 1,250 + 600 + 200 = **2,050 televisores**
+
+### 📊 Matriz de Confusión para Marca 1:
+
+| | **Defectuoso** | **No Defectuoso** | **Total** |
+|---|---|---|---|
+| **Marca 1** | **VP = 1,250** <br> *Verdaderos Positivos* | **VN = 3,750** <br> *Verdaderos Negativos* | **5,000** |
+| **Otras Marcas** | **FP = 800** <br> *Falsos Positivos* | **FN = 4,200** <br> *Falsos Negativos* | **5,000** |
+| **Total** | **2,050** | **7,950** | **10,000** |
+
+### 🎯 Métricas para Marca 1:
+
+| **Métrica** | **Fórmula** | **Cálculo** | **Resultado** | **Interpretación** |
+|-------------|-------------|-------------|---------------|-------------------|
+| **🎯 Valor Predictivo Positivo** <br> ***(ESTO ES BAYES)*** | **VP/(VP+FP)** | **1,250/(1,250+800)** | **61%** | **Si es defectuoso, ¿qué % es marca 1?** |
+| **Sensibilidad** <br> *(de Marca 1)* | VP/(VP+VN) | 1,250/(1,250+3,750) | **25%** | De marca 1, ¿qué % es defectuoso? |
+| **Especificidad** <br> *(para Marca 1)* | FN/(FN+FP) | 4,200/(4,200+800) | **84%** | De otras marcas, ¿qué % no es defectuoso? |
+
 **Interpretación**: Si un televisor es defectuoso, hay **61%** de probabilidad de que sea marca 1.
+
+**🔍 Observación clave**: Aunque marca 1 tiene solo 25% de defectuosos, al ser la marca más vendida (50%), contribuye con más defectuosos totales (1,250 de 2,050 = 61%).
 
 ## Ejemplo 2: Pruebas Médicas (Explicación Detallada)
 
@@ -237,7 +268,38 @@ P(D) = 0.02×0.50 + 0.03×0.30 + 0.01×0.20 = 0.01 + 0.009 + 0.002 = 0.021
 
 P(B|D) = [P(D|B) × P(B)] / P(D) = [0.03 × 0.30] / 0.021 = 0.009 / 0.021 ≈ 0.429
 
+### Visualización con 10,000 Productos:
+
+**📊 Distribución por Máquina:**
+- **Máquina A**: 10,000 × 0.50 = **5,000 productos**
+- **Máquina B**: 10,000 × 0.30 = **3,000 productos**
+- **Máquina C**: 10,000 × 0.20 = **2,000 productos**
+
+**⚠️ Productos Defectuosos:**
+- **Máquina A defectuosos**: 5,000 × 0.02 = **100 productos**
+- **Máquina B defectuosos**: 3,000 × 0.03 = **90 productos**
+- **Máquina C defectuosos**: 2,000 × 0.01 = **20 productos**
+- **Total defectuosos**: 100 + 90 + 20 = **210 productos**
+
+### 📊 Matriz de Confusión para Máquina B:
+
+| | **Defectuoso** | **No Defectuoso** | **Total** |
+|---|---|---|---|
+| **Máquina B** | **VP = 90** <br> *Verdaderos Positivos* | **VN = 2,910** <br> *Verdaderos Negativos* | **3,000** |
+| **Otras Máquinas** | **FP = 120** <br> *Falsos Positivos* | **FN = 6,880** <br> *Falsos Negativos* | **7,000** |
+| **Total** | **210** | **9,790** | **10,000** |
+
+### 🎯 Métricas para Máquina B:
+
+| **Métrica** | **Fórmula** | **Cálculo** | **Resultado** | **Interpretación** |
+|-------------|-------------|-------------|---------------|-------------------|
+| **🎯 Valor Predictivo Positivo** <br> ***(ESTO ES BAYES)*** | **VP/(VP+FP)** | **90/(90+120)** | **42.9%** | **Si es defectuoso, ¿qué % viene de máquina B?** |
+| **Sensibilidad** <br> *(de Máquina B)* | VP/(VP+VN) | 90/(90+2,910) | **3%** | De máquina B, ¿qué % es defectuoso? |
+| **Especificidad** <br> *(para Máquina B)* | FN/(FN+FP) | 6,880/(6,880+120) | **98.3%** | De otras máquinas, ¿qué % no es defectuoso? |
+
 **Respuesta**: **42.9%** de probabilidad de que venga de la máquina B.
+
+**🔍 Observación clave**: Aunque máquina B tiene la mayor tasa de defectos (3%), no produce la mayoría de defectuosos porque produce menos volumen que máquina A.
 
 ## Ejemplo 4: Análisis de Email Spam
 
@@ -264,7 +326,43 @@ P(M) = 0.90×0.02 + 0.01×0.98 = 0.018 + 0.0098 = 0.0278
 
 P(S|M) = [0.90 × 0.02] / 0.0278 = 0.018 / 0.0278 ≈ 0.647
 
+### Visualización con 10,000 Emails:
+
+**📧 Distribución Real:**
+- **Spam real**: 10,000 × 0.02 = **200 emails**
+- **Legítimos reales**: 10,000 × 0.98 = **9,800 emails**
+
+**🔍 Lo que hace el Filtro:**
+
+**De los 200 emails QUE SON SPAM:**
+- **Marcados como spam**: 200 × 0.90 = **180 emails** (verdaderos positivos)
+- **Marcados como legítimos**: 200 × 0.10 = **20 emails** (falsos negativos)
+
+**De los 9,800 emails QUE SON LEGÍTIMOS:**
+- **Marcados como legítimos**: 9,800 × 0.99 = **9,702 emails** (verdaderos negativos)
+- **Marcados como spam**: 9,800 × 0.01 = **98 emails** (falsos positivos)
+
+### 📊 Matriz de Confusión para el Filtro de Spam:
+
+| | **Marcado como SPAM** | **Marcado como LEGÍTIMO** | **Total** |
+|---|---|---|---|
+| **Realmente SPAM** | **VP = 180** <br> *Verdaderos Positivos* | **FN = 20** <br> *Falsos Negativos* | **200** |
+| **Realmente LEGÍTIMO** | **FP = 98** <br> *Falsos Positivos* | **VN = 9,702** <br> *Verdaderos Negativos* | **9,800** |
+| **Total** | **278** | **9,722** | **10,000** |
+
+### 🎯 Métricas del Filtro de Spam:
+
+| **Métrica** | **Fórmula** | **Cálculo** | **Resultado** | **Interpretación** |
+|-------------|-------------|-------------|---------------|-------------------|
+| **Sensibilidad** <br> *(Recall, TPR)* | VP/(VP+FN) | 180/(180+20) | **90%** | De los spam reales, ¿qué % detecta? |
+| **Especificidad** <br> *(TNR)* | VN/(VN+FP) | 9,702/(9,702+98) | **99%** | De los legítimos, ¿qué % identifica correctamente? |
+| **🎯 Valor Predictivo Positivo** <br> ***(ESTO ES BAYES)*** | **VP/(VP+FP)** | **180/(180+98)** | **64.7%** | **Si es marcado como spam, ¿qué % es realmente spam?** |
+| **Valor Predictivo Negativo** <br> *(NPV)* | VN/(VN+FN) | 9,702/(9,702+20) | **99.8%** | Si es marcado como legítimo, ¿qué % es realmente legítimo? |
+| **Exactitud** <br> *(Accuracy)* | (VP+VN)/Total | (180+9,702)/10,000 | **98.82%** | ¿Qué % de clasificaciones son correctas? |
+
 **Resultado**: **64.7%** de probabilidad de que sea realmente spam.
+
+**🔍 Observación clave**: Aunque el filtro es muy bueno (90% sensibilidad, 99% especificidad), solo 64.7% de los emails marcados como spam son realmente spam, debido a la baja prevalencia del spam (2%).
 
 ## Pasos Sistemáticos para Resolver Problemas con Bayes
 
