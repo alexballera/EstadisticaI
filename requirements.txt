@@ -1,0 +1,19 @@
+# ============================================================================
+# ESTADÍSTICA I - ARCHIVO DE DEPENDENCIAS COMPILADO
+# ============================================================================
+#
+# Este archivo debe ser generado automáticamente desde requirements.in
+# mediante pip-tools. NO editar manualmente.
+#
+# Para generar/actualizar este archivo, ejecutar:
+#
+#   python -m venv .venv
+#   .venv\Scripts\activate      # Windows
+#   pip install pip-tools
+#   python -m piptools compile
+#
+# ============================================================================
+#
+# NOTA: Este archivo debe ser regenerado. Ejecutar los comandos anteriores
+# para obtener las versiones fijadas de todas las dependencias.
+#

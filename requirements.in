@@ -1,0 +1,38 @@
+# ============================================================================
+# ESTADÍSTICA I - CÁTEDRA BIANCO
+# Tecnicatura en Gestión y Análisis de Datos (TGAD)
+# Facultad de Ciencias Económicas - UBA
+# ============================================================================
+#
+# Este archivo contiene las DEPENDENCIAS DIRECTAS del proyecto.
+# Para generar requirements.txt con versiones fijadas, ejecutar:
+#   python -m piptools compile
+#
+# ============================================================================
+
+# --- Core Data Science ---
+numpy
+pandas
+scipy
+
+# --- Visualización ---
+matplotlib
+seaborn
+
+# --- Matemática Simbólica ---
+sympy
+
+# --- Presentación y Notebooks ---
+ipython
+ipywidgets
+nbformat
+
+# --- Obtención de Datos ---
+requests
+
+# --- Grafos y Árboles de Probabilidad (Unidad 1) ---
+anytree
+graphviz
+
+# --- Datos Financieros (Unidad 9) ---
+yfinance
